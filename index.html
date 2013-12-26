@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Visualizing NYC's Open Datasets</title>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Exo:400,700' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4921346-3', 'chriswhong.com');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+  <div id="headerouter" style="display:none"><div id="headerinner">
+    <div id = "headerleft">
+      Visualizing NYC's Open Data
+    </div>
+    <div id = "headersvg">
+      <svg height="42" width="500">
+        <circle r="7px" cx = "10px" cy = "12px" class="node"></circle>
+        <text x="25px" y="17px" class="headertext">Original Dataset</text>
+        <circle r="7px" cx = "10px" cy = "30px"class="view"></circle>
+        <text x="25px" y="35px" class="headertext">Derived View</text>
+
+        <image xlink:href="img/icontable.png" x="140px" y="8px" height="8px" width="8px"></image>
+        <text x="155px" y="17px" class="headertext">Tabular Data</text>
+        <image xlink:href="img/iconfilter.png" x="140px" y="26px" height="8px" width="8px"></image>
+        <text x="155px" y="35px" class="headertext">Filtered Table</text>
+
+        <image xlink:href="img/iconchart.png" x="270px" y="8px" height="8px" width="8px"></image>
+        <text x="285px" y="17px" class="headertext">Chart</text>
+        <image xlink:href="img/iconmap.png" x="270px" y="26px" height="8px" width="8px"></image>
+        <text x="285px" y="35px" class="headertext">Map</text>
+
+        <image xlink:href="img/iconattach.png" x="350px" y="8px" height="8px" width="8px"></image>
+        <text x="365px" y="17px" class="headertext">Downloadable File</text>
+        <image xlink:href="img/iconexternal.png" x="350px" y="26px" height="8px" width="8px"></image>
+        <text x="365px" y="35px" class="headertext">External Link</text>
+      </svg>
+    </div>
+
+    <div id = "tweet">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.chriswhong.com/nycopendata" data-text="Visualizing NYC's Open Data Portal" data-via="chris_whong" data-hashtags="nycopendata">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+    
+    <div id = "about">About</div>
+  </div>
+
+
+</div>
+
+  <div id = "loading"><div id = "loadingText">Loading...</div><div id = "loadingsmall">(I'm rendering a complex visualization... this may take 15 seconds or more)</div></div>
+  <div id = "aboutbox" style = "display:none">
+    <div class = "closex">X</div>
+    <div class = "abouttitle">About</div>
+    <div class = "abouttext">
+      This is a visualization of the 1100+ <a href = "http://data.cityofnewyork.us">open datasets made available by New York City</a>.  It is a force-directed graph generated with the charting library d3.js.  NYC's open data portal runs on the Socrata platform, and this visualization was created using the <a href = "https://data.cityofnewyork.us/Other/NYC-OpenData-Catalog/tdsx-cvye/about">"dataset of datasets"</a> and the <a href = "http://dev.socrata.com/">Socrata Open Data API (SODA)</a>.<br/><br/>
+
+      Why? The point is to show the scale of the portal, and to illustrate which datasets have user-created views.  In the future, it would be great to dynamically size the circles by the popularity of the datasets.<br/><br/>
+
+      Code available on <a href = "https://github.com/louiedog98">Github</a><br/><br/>
+
+      Visualization by <a href = "https://twitter.com/chris_whong">@chris_whong</a>
+    </div>
+
+  </div>
+  <div id="chart" style="display:none">
+
+    <div id="legend" style="display:none">
+      <div id = "lname"></div>
+      <div id = "ldescription"></div>
+      <div id = "lowner"></div>
+      <div id = "lattribution"></div>
+      <div id = "lcreated"></div>
+      <div id = "lupdated"></div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src = "js/nycforce.js">
+
+
+  </script>
+</body>
+</html>
