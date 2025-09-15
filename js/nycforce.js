@@ -28,7 +28,7 @@ var vis = d3.select("#chart")
 
 // Fetch NYC Open Data datasets
 async function fetchNYCData() {
-  const baseUrl = "http://data.cityofnewyork.us/resource/5tqd-u88y.json?$Select=uid,datasetinformation_agency,type,description,name,category";
+  const baseUrl = "https://data.cityofnewyork.us/resource/5tqd-u88y.json?$Select=uid,datasetinformation_agency,type,description,name,category";
   const urls = [
     baseUrl,
     baseUrl + "&$offset=1000",
